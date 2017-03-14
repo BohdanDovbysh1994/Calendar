@@ -4,8 +4,7 @@ import java.util.ArrayList;
 
 public class VerhovnaRada {
 	ArrayList<Faction> factions = new ArrayList<>();
-	private Faction faction;
-	String name;
+	private String name;
 	ArrayList<Faction> fractions = new ArrayList<>();
 	Faction fraction = new Faction(name);
 
@@ -13,15 +12,13 @@ public class VerhovnaRada {
 		System.out.println("Enter name of fraction");
 		String name = Main.scanner.next();
 		Faction fraction = new Faction(name);
-		// fraction.addDepatat();
 		fractions.add(fraction);
 
-		// System.out.println(fraction.toString());
 	}
 
 	public void allFractions() {
 		for (int i = 0; i < fractions.size(); i++) {
-			System.out.println(fractions.get(i));
+			System.out.println(fractions.get(i).getFactionName());
 
 		}
 	}
@@ -57,16 +54,6 @@ public class VerhovnaRada {
 		}
 	}
 
-	public void showAllBribersInFraction() {
-		System.out.println("Enter name of fraction");
-		String name = Main.scanner.next();
-		for (int i = 0; i < fractions.size(); i++) {
-			if (name.equalsIgnoreCase(fractions.get(i).getFactionName())) {
-				fractions.get(i).factionGrafter();
-			}
-		}
-	}
-
 	public void deleteDeputy() {
 		System.out.println("Enter name of fraction which you want to delete");
 		String name = Main.scanner.next();
@@ -77,6 +64,45 @@ public class VerhovnaRada {
 
 			}
 		}
+	}
+
+	public void showAllBribersInFraction() {
+		System.out.println("Enter name of fraction");
+		String name = Main.scanner.next();
+		for (int i = 0; i < fractions.size(); i++) {
+			if (name.equalsIgnoreCase(fractions.get(i).getFactionName())) {
+				fractions.get(i).factionGrafter();
+			}
+		}
+	}
+
+	public void biggestBribeInFaction() {
+		System.out.println("Enter name of fraction");
+		String name = Main.scanner.next();
+		for (int i = 0; i < fractions.size(); i++) {
+			if (name.equalsIgnoreCase(fractions.get(i).getFactionName())) {
+				fractions.get(i).factionBiggestGrafter();
+			}
+		}
+	}
+
+	public void AllDeputiesInFaction() {
+		System.out.println("Enter name of fraction");
+		String name = Main.scanner.next();
+		for (int i = 0; i < fractions.size(); i++) {
+			if (name.equalsIgnoreCase(fractions.get(i).getFactionName())) {
+				fractions.get(i).allDeputies();
+				
+			}
+		}
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 
 }

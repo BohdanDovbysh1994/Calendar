@@ -72,7 +72,7 @@ public class Faction {
 	
 	public void allDeputies(){
 		for (int i = 0; i < deputies.size(); i++) {
-			System.out.println(deputies.get(i));
+			System.out.println(deputies.get(i).getName() + " " + deputies.get(i).getSecondName());
 		}
 	}
 	public void remuveFaction (){
