@@ -4,6 +4,15 @@ import java.util.ArrayList;
 
 public class Faction {
 	ArrayList<Deputy> deputies = new ArrayList<>();
+	private String factionName;
+	
+	
+	
+
+	public Faction(String factionName) {
+		super();
+		this.factionName = factionName;
+	}
 
 	public void addDeputy() {
 		System.out.println("Enter his weight");
@@ -63,11 +72,21 @@ public class Faction {
 	
 	public void allDeputies(){
 		for (int i = 0; i < deputies.size(); i++) {
-			System.out.println(deputies);
+			System.out.println(deputies.get(i));
 		}
 	}
 	public void remuveFaction (){
 			deputies.removeAll(deputies);
 		
 	}
+
+	public String getFactionName() {
+		return factionName;
+	}
+
+	public void setFactionName(String factionName) {
+		this.factionName = factionName;
+	}
+
+
 }

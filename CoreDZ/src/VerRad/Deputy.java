@@ -49,5 +49,10 @@ public class Deputy extends Human{
 			}
 		}
 	}
+	@Override
+	public String toString() {
+		return "Deputy [name=" + name + ", secondName=" + secondName + ", grafter=" + grafter + ", priceBribes="
+				+ priceBribes + "]";
+	}
 	
 }
