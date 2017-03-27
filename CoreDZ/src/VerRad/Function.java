@@ -1,6 +1,6 @@
 package VerRad;
 
-public class Fanction {
+public class Function {
 	VerhovnaRada rada = new VerhovnaRada();
 	
 	

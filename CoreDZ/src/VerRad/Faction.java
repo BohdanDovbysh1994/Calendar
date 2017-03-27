@@ -5,9 +5,6 @@ import java.util.ArrayList;
 public class Faction {
 	ArrayList<Deputy> deputies = new ArrayList<>();
 	private String factionName;
-	
-	
-	
 
 	public Faction(String factionName) {
 		super();
@@ -51,33 +48,36 @@ public class Faction {
 		}
 
 	}
-	public void factionGrafter(){
+
+	public void factionGrafter() {
 		for (int i = 0; i < deputies.size(); i++) {
-			if (deputies.get(i).isGrafter() == true){
+			if (deputies.get(i).isGrafter() == true) {
 				System.out.println(deputies.get(i).getName() + " " + deputies.get(i).getSecondName() + " хабарник");
 			}
 		}
 	}
-	public void factionBiggestGrafter(){
+
+	public void factionBiggestGrafter() {
 		int habar = 0;
 		String deputat = "";
 		for (int i = 0; i < deputies.size(); i++) {
-			if(deputies.get(i).getPriceBribes() > habar){
+			if (deputies.get(i).getPriceBribes() > habar) {
 				habar = deputies.get(i).getPriceBribes();
 				deputat = deputies.get(i).getName() + " " + deputies.get(i).getSecondName();
 			}
 		}
 		System.out.println(deputat + " найбільший хабарник");
 	}
-	
-	public void allDeputies(){
+
+	public void allDeputies() {
 		for (int i = 0; i < deputies.size(); i++) {
 			System.out.println(deputies.get(i).getName() + " " + deputies.get(i).getSecondName());
 		}
 	}
-	public void remuveFaction (){
-			deputies.removeAll(deputies);
-		
+
+	public void remuveFaction() {
+		deputies.clear();
+
 	}
 
 	public String getFactionName() {
@@ -88,5 +88,9 @@ public class Faction {
 		this.factionName = factionName;
 	}
 
+	@Override
+	public String toString() {
+		return factionName;
+	}
 
 }

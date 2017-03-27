@@ -10,60 +10,51 @@ public class Main {
 		while (work) {
 
 			VerhovnaRada rada = new VerhovnaRada();
-			Fanction fanction = new Fanction();
-			//fanction.menu();
-			
-			rada.addFraction();
-	
+			Function fanction = new Function();
+			fanction.menu();
 
-			rada.addAnDeputyToConcreteFraction();
-			rada.addAnDeputyToConcreteFraction();
-
-			rada.AllDeputiesInFaction();
-			
-			
 			String choise = Main.scanner.next();
 			switch (choise) {
-			case "1":{
+			case "1": {
 				rada.addFraction();
 				break;
 			}
-			case "2":{
+			case "2": {
 				rada.deleteFraction();
 				break;
 			}
-			case "3":{
-				
+			case "3": {
+				rada.deleteAllDeputiesinFR();
 				break;
 			}
-			case "4":{
+			case "4": {
 				rada.allFractions();
 				break;
 			}
-			case "5":{
+			case "5": {
+				rada.AllDeputiesInFaction();
 				break;
 			}
-			case "6":{
+			case "6": {
 				rada.addAnDeputyToConcreteFraction();
 				break;
 			}
-			case "7":{
+			case "7": {
 				rada.deleteDeputy();
 				break;
-			}
-			case "8":{
+			} 
+			case "8": {
 				rada.showAllBribersInFraction();
 				break;
 			}
-			case "9":{
+			case "9": {
 				rada.biggestBribeInFaction();
 				break;
 			}
-			
-			
 			}
 		}
 
 	}
+
 
 }
