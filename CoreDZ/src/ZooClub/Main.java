@@ -1,10 +1,14 @@
 package ZooClub;
 
+import java.util.List;
+import java.util.Map;
+import java.util.Scanner;
+
 public class Main {
+	public static Scanner scanner = new Scanner(System.in);
+
 	public static void main(String[] args) {
-		Metod metod = new Metod();
-metod.add_person();
-metod.add_pet();
-metod.show_all();
+		Zoo_Club club = new Zoo_Club();
+		club.menu();
 	}
 }

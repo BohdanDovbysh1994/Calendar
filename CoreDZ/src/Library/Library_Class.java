@@ -141,7 +141,7 @@ public class Library_Class {
 		}
 	}
 	public void show_library() {
-		set = map.entrySet();
+	//	set = map.entrySet();
 		Iterator<Entry<Author, List<Book>>> iterator = set.iterator();
 		while (iterator.hasNext()) {
 			System.out.println(iterator.next());
@@ -197,12 +197,12 @@ public class Library_Class {
 			}
 			case "9":{
 				System.exit(8);
-				work = false;
 			}
 			
 			}
 			}
 		}
+
 	public Set<Entry<Author, List<Book>>> getSet() {
 		return set;
 	}
