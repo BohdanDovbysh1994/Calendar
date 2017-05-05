@@ -7,33 +7,25 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 @Entity
-public class maker {
+@Table(name = "Countries") 
+public class Country {
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	@Column(unique=true)
 	private String name;
-//	@Column(unique=true)
-//	private Country country;
 	
-	@ManyToOne
-	private Country country;
+	@OneToMany (mappedBy = "country")
+	List<maker> makers;
 	
-	@OneToMany (mappedBy = "maker")
-	List<ComputerComodity> computerComodities;
-	@OneToMany (mappedBy = "maker")
-	List<householdAppliances> householdAppliances;
-	
-	
-	
-	public maker() {
-		// TODO Auto-generated constructor stub
+	public Country() {
+		
 	}
-	public maker(String name) {
+	public Country(String name) {
 		super();
 		this.name = name;
 	}
@@ -49,13 +41,6 @@ public class maker {
 	public void setName(String name) {
 		this.name = name;
 	}
-//	public Country getCountry() {
-//		return country;
-//	}
-//	public void setCountry(Country country) {
-//		this.country = country;
-//	}
-
 	
 
 }

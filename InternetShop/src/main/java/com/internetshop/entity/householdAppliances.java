@@ -1,10 +1,16 @@
 package com.internetshop.entity;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class householdAppliances {
@@ -17,6 +23,17 @@ public class householdAppliances {
 	private String brend;
 	private int price;
 	private int number;
+	
+	@ManyToMany
+	 @JoinTable(name = "Orders_householdAppliances", joinColumns = 
+	 @JoinColumn(name = "householdAppliancesID"), inverseJoinColumns
+	 = @JoinColumn(name = "OrdersID"))
+	 public List<Orders> orders;
+	
+	@ManyToOne
+	private maker maker;
+	
+	
 	public householdAppliances() {
 		// TODO Auto-generated constructor stub
 	}
@@ -57,6 +74,13 @@ public class householdAppliances {
 	public void setNumber(int number) {
 		this.number = number;
 	}
+	public maker getMaker() {
+		return maker;
+	}
+	public void setMaker(maker maker) {
+		this.maker = maker;
+	}
+	
 	
 
 }
