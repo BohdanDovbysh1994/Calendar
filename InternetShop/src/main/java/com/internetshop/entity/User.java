@@ -14,11 +14,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "customer") 
-public class User {
-
-	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int id;
+public class User extends AbstractEntity{
 	@Column(unique=true)
 	private String name;
 	@Column(unique=true)
@@ -39,15 +35,6 @@ public class User {
 		this.email = email;
 		this.password = password;
 	}
-
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
-
 	public String getName() {
 		return name;
 	}

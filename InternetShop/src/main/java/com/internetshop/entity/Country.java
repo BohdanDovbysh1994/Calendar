@@ -12,10 +12,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "Countries") 
-public class Country {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+public class Country extends AbstractEntity{
 	@Column(unique=true)
 	private String name;
 	
@@ -29,17 +26,17 @@ public class Country {
 		super();
 		this.name = name;
 	}
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
 	public String getName() {
 		return name;
 	}
 	public void setName(String name) {
 		this.name = name;
+	}
+	public List<maker> getMakers() {
+		return makers;
+	}
+	public void setMakers(List<maker> makers) {
+		this.makers = makers;
 	}
 	
 

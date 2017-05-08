@@ -13,10 +13,9 @@ import javax.persistence.ManyToOne;
 
 
 @Entity
-public class ComputerComodity {
+public class ComputerComodity extends AbstractEntity {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int id;
 	private int price;
 	private String brend;
 	private String model;
@@ -42,15 +41,6 @@ public class ComputerComodity {
 	
 	public ComputerComodity() {
 		// TODO Auto-generated constructor stub
-	}
-
-
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
 	}
 
 	public int getPrice() {

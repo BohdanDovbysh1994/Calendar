@@ -11,10 +11,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 @Entity
-public class maker {
-	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int id;
+public class maker extends AbstractEntity {
 	@Column(unique=true)
 	private String name;
 //	@Column(unique=true)
@@ -37,24 +34,18 @@ public class maker {
 		super();
 		this.name = name;
 	}
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
 	public String getName() {
 		return name;
 	}
 	public void setName(String name) {
 		this.name = name;
 	}
-//	public Country getCountry() {
-//		return country;
-//	}
-//	public void setCountry(Country country) {
-//		this.country = country;
-//	}
+	public Country getCountry() {
+		return country;
+	}
+	public void setCountry(Country country) {
+		this.country = country;
+	}
 
 	
 

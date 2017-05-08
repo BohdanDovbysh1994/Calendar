@@ -13,10 +13,8 @@ import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 
 @Entity
-public class householdAppliances {
-	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int id;
+public class householdAppliances extends AbstractEntity{
+
 	@Column(unique=true)
 	private String type;
 	@Column(unique=true)
@@ -43,12 +41,6 @@ public class householdAppliances {
 		this.brend = brend;
 		this.price = price;
 		this.number = number;
-	}
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
 	}
 	public String getType() {
 		return type;

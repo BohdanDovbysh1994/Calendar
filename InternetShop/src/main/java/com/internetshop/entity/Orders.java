@@ -13,10 +13,7 @@ import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 
 @Entity
-public class Orders {
-	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int id;
+public class Orders extends AbstractEntity {
 	private LocalDateTime date;
 	@ManyToOne
 	private User user;
@@ -45,12 +42,6 @@ public class Orders {
 	}
 	public void setDate(LocalDateTime date) {
 		this.date = date;
-	}
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
 	}
 	public User getUser() {
 		return user;
